@@ -1,0 +1,28 @@
+{% load static %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<h1 style="text-align: center; font-size: xx-large; font-weight: bolder;">
+    Tienda de Ropa
+</h1>
+<a href="{% url 'home' %}">
+    <button class="button is-primary is-hovered">
+    <span class="icon is-small">
+        <i class="fas fa-home"></i>
+    </span>
+</button>
+</a>
+
+{%block content %} 
+    {% for productos in Products %}
+        <div class="">
+            <center>
+            <h2 style="font-weight: bold;font-size: larger;font-family: 'Courier New', Courier, monospace;color: purple;"> <a href="{% url 'articulos' productos.pk %}"> {{ productos.nombre}}</a></h2>
+            <img src="{{productos.imagen}}" alt="">
+            <p>{{productos.descripcion}}</p>
+                <strong>Vendedor:</strong><small> {{productos.vendedor}}</small>
+            </center>
+        </div>
+        <hr>
+    {% endfor %} 
+
+{% endblock content %}
