@@ -1,0 +1,16 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css">
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+{% extends 'home.html' %} 
+{% block content %}
+
+<div style="margin-left: 10%;" class="container">
+    <div class="field">
+        <header style="font-size: xx-large;font-weight: bolder; font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif; color: orange;">Nuevo Producto</header>
+        <br>
+        <form style="align-content: center;" action="" method="post">{% csrf_token %}
+            {{ form.as_p }}
+            <input style="background-color: aqua;" type="submit" value="Guardar">
+        </form>
+    </div>
+</div>
+{% endblock content %} 

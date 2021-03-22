@@ -1,0 +1,11 @@
+{% extends 'home.html' %} 
+{% block content %} 
+
+<div style="margin-left: 10%;" class="container">
+    <h1 style="font-family: cursive; font-size: xx-large; font-weight: bolder; color: teal;">Editar Producto</h1>
+    <form action="" method="post">{% csrf_token %}
+        {{form.as_p}}
+        <input style="background-color: rgb(255, 83, 255);" type="submit" value="Actualizar">
+    </form>
+</div>
+{% endblock content %} 

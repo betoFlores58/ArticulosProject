@@ -1,0 +1,12 @@
+{% extends 'home.html' %} 
+{% block content %} 
+<br>
+<div style="margin-left: 10%;" class="container">
+<h1 style="font-size: x-large; font-weight: bolder; font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif; color: rgb(255, 196, 0);">Eliminar Producto</h1>
+<br>
+<form action="" method="post">{% csrf_token %}
+    <p>Desea eliminar el siguiente producto: "{{Products.nombre}}" ?</p>
+    <input style="background-color: red;" type="submit" value="Confirmar">
+</form>
+</div>
+{% endblock content %} 

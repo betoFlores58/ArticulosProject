@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 class Vendedor(models.Model):
     tienda = models.TextField()
@@ -18,6 +19,8 @@ class Post(models.Model):
     imagen = models.TextField(default='')
     precio = models.TextField(default='')
 
-
     def __str__(self):
         return self.nombre
+
+    def get_absolute_url(self):
+        return reverse('articulos', args=[str(self.id)])

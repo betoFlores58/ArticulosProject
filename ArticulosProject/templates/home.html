@@ -4,14 +4,22 @@
 <h1 style="text-align: center; font-size: xx-large; font-weight: bolder;">
     Tienda de Ropa
 </h1>
-<a href="{% url 'home' %}">
-    <button class="button is-primary is-hovered">
-    <span class="icon is-small">
-        <i class="fas fa-home"></i>
-    </span>
-</button>
-</a>
-
+<div style="position: sticky;" class="container is-sticky">
+    <a href="{% url 'home' %}">
+        <button class="button is-primary is-hovered">
+            <span class="icon is-small">
+                <i class="fas fa-home"></i>
+            </span>
+        </button>
+    </a>
+    <a style="margin-left: 90%" href="{% url 'notaNueva' %}">
+    <button style="position: sticky;" class="button is-link is-hovered">
+        <span class="icon is-small">
+            <i class="fas fa-plus"></i>
+        </span>
+    </button>
+    </a>
+</div>
 {%block content %} 
     {% for productos in Products %}
         <div class="">
@@ -19,7 +27,7 @@
             <h2 style="font-weight: bold;font-size: larger;font-family: 'Courier New', Courier, monospace;color: purple;"> <a href="{% url 'articulos' productos.pk %}"> {{ productos.nombre}}</a></h2>
             <img src="{{productos.imagen}}" alt="">
             <p>{{productos.descripcion}}</p>
-                <strong>Vendedor:</strong><small> {{productos.vendedor}}</small>
+            <strong>Vendedor:</strong><small> {{productos.vendedor}}</small>
             </center>
         </div>
         <hr>

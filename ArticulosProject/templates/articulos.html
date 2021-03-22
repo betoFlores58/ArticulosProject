@@ -21,11 +21,25 @@
                 <p>{{Products.descripcion}}</p>
                 <small><strong>Tienda:</strong> {{ Products.vendedor }}</small>
                 <br>
-                <button class="button is-danger is-hovered">
+                <button class="button is-warning is-hovered">
                     <span class="icon is-small">
                     <i class="fas fa-heart"></i>
                     </span>
                 </button>
+                <a href="{% url 'editarProducto' Products.pk %}">
+                    <button class="button is-info is-hovered">
+                        <span class="icon is-small">
+                            <i class="fas fa-edit"></i>
+                        </span>
+                    </button>
+                </a>
+                <a href="{% url 'eliminarProducto' Products.pk %}">
+                    <button class="button is-danger is-hovered">
+                        <span class="icon is-small">
+                            <i class="fas fa-trash"></i>
+                        </span>
+                    </button>
+                </a>
             </div>
             </div>
         </div>
